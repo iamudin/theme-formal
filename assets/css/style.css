@@ -3282,7 +3282,7 @@ blockquote:before {
     display: table;
 }
 .boxed .header-style-2 .header-curve.is-fixed .logo-header-outer {
-    overflow: hidden;
+    overflow: visible;
 }
 .boxed .header-style-2 .header-curve.is-fixed .logo-header:after {
     left: auto;
@@ -8961,7 +8961,7 @@ button.scroltop {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
 }
 .boxed .tp-banner-container,

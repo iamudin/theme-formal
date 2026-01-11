@@ -1,11 +1,11 @@
   <div class="col-lg-4 col-md-12">
-                        <aside  class="side-bar">
+                        <aside  class="side-bar sidebar-sticky">
                             <div class="widget">
                <div class="sidebar-banner-slider">
     <div id="sidebarBannerCarousel" class="carousel slide sidebar-carousel" data-bs-ride="carousel">
         <div class="carousel-inner">
 
-            @foreach(get_banner('banner-sidebar',5) as $i => $banner)
+            @foreach(get_banner('banner-sidebar', 5) as $i => $banner)
                 <div class="carousel-item {{ $i === 0 ? 'active' : '' }}">
                     <div class="sidebar-banner-item">
                         <img src="{{ $banner->image }}" >
@@ -33,206 +33,106 @@
 
 
                             </div>
-                            <div class="widget recent-posts-entry  " >
-                                <h4 class="widget-title text-primary"> <i class="fa fa-chart-line"></i> Berita Populer </h4>
-                                <style>
-/* CARD */
-.sidebar-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 14px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-}
+                                   <div class="widget">
+                            <!-- Latest Announcements Sidebar -->
+<!-- Announcement Binder Sidebar -->
+<div class="sidebar-binder bg-white rounded-3 shadow-sm mt-4">
 
-.sidebar-card-title {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #1f2937;
-}
-
-/* LIST */
-.sidebar-popular-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar-popular-list li {
-    display: flex;
-    gap: 10px;
-    padding: 10px 0;
-    border-bottom: 1px dashed #e5e7eb;
-    align-items: flex-start;
-}
-
-.sidebar-popular-list li:last-child {
-    border-bottom: none;
-}
-
-/* RANK */
-.sidebar-popular-list .rank {
-    min-width: 22px;
-    height: 22px;
-    background: #f1f5f9;
-    color: #64748b;
-    font-size: 11px;
-    font-weight: 600;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* THUMBNAIL */
-.sidebar-popular-list .thumb {
-    width: 56px;
-    height: 56px;
-    border-radius: 8px;
-    object-fit: contain;   /* TIDAK CROP */
-    background: #f3f4f6;
-    flex-shrink: 0;
-}
-
-/* CONTENT */
-.sidebar-popular-list .content {
-    flex: 1;
-}
-
-.sidebar-popular-list a {
-    font-size: 13px;
-    line-height: 1.45;
-    color: #334155;
-    text-decoration: none;
-    display: block;
-}
-
-.sidebar-popular-list a:hover {
-    color: #0d6efd;
-}
-
-/* META */
-.sidebar-popular-list .meta {
-    display: flex;
-    gap: 10px;
-    margin-top: 4px;
-    font-size: 11px;
-    color: #94a3b8;
-}
-
-.sidebar-popular-list .views {
-    white-space: nowrap;
-}
-
-                                </style>
-     <div class="sidebar-card">
-
-
-        <ul class="sidebar-popular-list">
-
-            <li>
-                <span class="rank">1</span>
-
-                <img src="https://leazycms.test/media/pengumuman-dermaga-ii-pelabuhan-ro.webp"
-                     class="thumb"
-                     alt="Thumbnail berita">
-
-                <div class="content">
-                    <a href="#">
-                        Pelayanan Administrasi Kependudukan Kini Lebih Cepat
-                    </a>
-
-                    <div class="meta">
-                        <span class="date">12 Jun 2025</span>
-                        <span class="views">👁 1.245</span>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <span class="rank">2</span>
-
-                <img src="/images/berita-2.jpg"
-                     class="thumb"
-                     alt="Thumbnail berita">
-
-                <div class="content">
-                    <a href="#">
-                        Penyaluran Bantuan Sosial Tahap II Telah Dimulai
-                    </a>
-
-                    <div class="meta">
-                        <span class="date">10 Jun 2025</span>
-                        <span class="views">👁 980</span>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <span class="rank">3</span>
-
-                <img src="/images/berita-3.jpg"
-                     class="thumb"
-                     alt="Thumbnail berita">
-
-                <div class="content">
-                    <a href="#">
-                        Musyawarah Perencanaan Pembangunan Desa
-                    </a>
-
-                    <div class="meta">
-                        <span class="date">8 Jun 2025</span>
-                        <span class="views">👁 860</span>
-                    </div>
-                </div>
-            </li>
-
-        </ul>
-
+    <div class="binder-header px-3 py-2">
+        📢 Pengumuman Terbaru
     </div>
 
+    <div class="binder-body">
+@forelse(query()->index_limit('pengumuman',3) as $row)
+        <a href="{{ $row->link }}" class="binder-item text-decoration-none">
+            <div class="binder-ring"></div>
+
+            <div class="binder-content">
+                <span class="badge bg-info mb-1">Info</span>
+                <h6 class="binder-title">
+                    {{ $row->title }}
+                </h6>
+                <div class="binder-meta">
+                   {{ $row->created_at->format('d M Y') }}
+                </div>
+            </div>
+        </a>
+@empty 
+        <p class="text-center p-3 text-muted">
+            Tidak ada pengumuman terbaru.
+        </p>
+@endforelse
+
+    </div>
+</div>
+
+
+                         </div>
+                            <div class="widget" >
+                           
+         
+<!-- Popular News Sidebar -->
+<div class="sidebar-popular bg-white rounded-3 shadow-sm p-3">
+
+    <h5 class="mb-3 fw-semibold border-bottom pb-2">
+        🔥 Berita Populer
+    </h5>
+    <!-- Item -->
+    @foreach(query()->index_popular('berita',5) as $row)
+    <a href="#" class="popular-item d-flex align-items-center text-decoration-none py-2" style="{{ !$loop->last ? 'border-bottom:1px dashed #ccc' : '' }}">
+        <div class="popular-thumb flex-shrink-0">
+            <img src="{{ $row->thumbnail }}" alt="">
+        </div>
+        <div class="ms-3">
+            <h6 class="popular-title mb-1">
+                {{$row->title}}
+            </h6>
+            <div class="popular-meta">
+                <span> <i class="fas facalendar"></i> {{ $row->created_at->format('d M Y') }}</span>
+                <span class="mx-1">•</span>
+                <span>{{ $row->visited }} dilihat</span>
+            </div>
+        </div>
+    </a>
+    @endforeach
+
+</div>
+
                             </div>
-                            <div class="widget widget_categories">
-                                <h4 class="widget-title">Categories List</h4>
-                                <ul>
-                                    <li><a href="javascript:void(0);">aciform</a> (1)</li>
-                                    <li><a href="javascript:void(0);">championship</a> (1) </li>
-                                    <li><a href="javascript:void(0);">chastening</a> (1) </li>
-                                    <li><a href="javascript:void(0);">clerkship</a> (1) </li>
-                                    <li><a href="javascript:void(0);">disinclination</a> (1) </li>
-                                    <li><a href="javascript:void(0);">disinfection</a> (1) </li>
-                                    <li><a href="javascript:void(0);">dispatch</a> (1) </li>
-                                    <li><a href="javascript:void(0);">echappee</a> (1) </li>
-                                    <li><a href="javascript:void(0);">Edge Case</a> (6) </li>
-                                    <li><a href="javascript:void(0);">enphagy</a> (1) </li>
-                                </ul>
+                  
+                            <div class="widget">
+                                <!-- Latest Downloads Sidebar -->
+<div class="sidebar-download bg-white rounded-3 shadow-sm p-3 mt-4">
+
+    <h5 class="mb-3 fw-semibold border-bottom pb-2">
+        <i class="fas fa-download"></i> Dokumen Terbaru
+    </h5>
+@foreach(query()->index_limit('download',5) as $row)
+    <a href="#" class="download-item d-flex align-items-center text-decoration-none py-2" style="{{ !$loop->last ? 'border-bottom:1px dashed #ccc' : '' }}">
+        <div class="download-icon bg-primary">
+            XLS
+        </div>
+        <div class="ms-3 flex-grow-1">
+            <h6 class="download-title mb-1">
+                {{ $row->title }}
+            </h6>
+            <div class="download-meta">
+                31 Des 2025 • 980 KB
+            </div>
+        </div>
+                </a>
+    @endforeach
+
+</div>
+
                             </div>
-                            <div class="widget widget_gallery">
-                                <h5 class="widget-title">Our services</h5>
-                                <ul>
-                                    <li><a href="javascript:void(0);"><div class="dez-post-thum dez-img-overlay1 dez-img-effect zoom-slow">
-										<img src="images/gallery/pic2.jpg" alt=""></div></a>
-                                    </li>
-                                    <li><a href="javascript:void(0);"><div class="dez-post-thum dez-img-overlay1 dez-img-effect zoom-slow">
-										<img src="images/gallery/pic1.jpg" alt=""></div></a>
-                                    </li>
-                                    <li><a href="javascript:void(0);"><div class="dez-post-thum dez-img-overlay1 dez-img-effect zoom-slow">
-										<img src="images/gallery/pic5.jpg" alt=""></div></a>
-                                    </li>
-                                    <li><a href="javascript:void(0);"><div class="dez-post-thum dez-img-overlay1 dez-img-effect zoom-slow">
-										<img src="images/gallery/pic7.jpg" alt=""></div></a>
-                                    </li>
-                                    <li><a href="javascript:void(0);"><div class="dez-post-thum dez-img-overlay1 dez-img-effect zoom-slow">
-										<img src="images/gallery/pic8.jpg" alt=""></div></a>
-                                    </li>
-                                    <li><a href="javascript:void(0);"><div class="dez-post-thum dez-img-overlay1 dez-img-effect zoom-slow">
-										<img src="images/gallery/pic9.jpg" alt=""></div></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="widget widget_tag_cloud">
-                                <h4 class="tagcloud">Tags</h4>
-                                <div class="tagcloud"> <a href="javascript:void(0);">Design</a> <a href="javascript:void(0);">User interface</a> <a href="javascript:void(0);">SEO</a> <a href="javascript:void(0);">WordPress</a> <a href="javascript:void(0);">Development</a> <a href="javascript:void(0);">Joomla</a> <a href="javascript:void(0);">Design</a> <a href="javascript:void(0);">User interface</a> <a href="javascript:void(0);">SEO</a> <a href="javascript:void(0);">WordPress</a> <a href="javascript:void(0);">Development</a> <a href="javascript:void(0);">Joomla</a> <a href="javascript:void(0);">Design</a> <a href="javascript:void(0);">User interface</a> <a href="javascript:void(0);">SEO</a> <a href="javascript:void(0);">WordPress</a> <a href="javascript:void(0);">Development</a> <a href="javascript:void(0);">Joomla</a> </div>
-                            </div>
+                            @if(get_option('latitude') && get_option('longitude'))
+                                   <div class="widget">
+                                    <h4 class="text-primary">Lokasi Kantor</h4>
+                                    <div class="rounded">
+                                        <iframe class="w-100 shadow-sm" style="height: 400px" src="https://www.google.com/maps?q={{ get_option('latitude') }},{{ get_option('longitude') }}&hl=id&z=17&output=embed" frameborder="0"></iframe>
+                                    </div>
+                                   </div>
+                                   @endif
                         </aside>
                     </div>

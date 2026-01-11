@@ -12,4 +12,7 @@ add_option('template',[
 ]);
 use_module([
     'sambutan'=>true,
+    'download'=>['active'=>true,'web'=>['auto_query'=>true,'post_perpage'=>20]] ,
+    'pengumuman'=>true,
+    'kepegawaian'=>true,
 ]);

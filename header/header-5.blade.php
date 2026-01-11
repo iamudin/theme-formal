@@ -17,7 +17,7 @@
         </div>
         <!-- top bar END-->
         <!-- main header -->
-        <div class="{{ !empty(get_option('navigation_style')) && get_option('navigation_style')=='Fixed' ? 'sticky-header' : 'sticky-no' }} header-curve main-bar-wraper navbar-expand-lg">
+        <div class="header-curve main-bar-wraper navbar-expand-lg {{ !empty(get_option('navigation_style')) && get_option('navigation_style') == 'Fixed' ? 'sticky-header' : 'sticky-no' }} ">
             <div class="main-bar clearfix ">
                 <div class="container clearfix">
                     <!-- website logo -->

@@ -1,127 +1,96 @@
 
-    <footer class="site-footer">
-        <!-- footer top part -->
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
-                        <div class="widget widget_about">
-                            							<div class="logo-footer">
-								<a href="index.html" class="logo-light"><img src="images/logo-white.png" alt=""></a>
-							</div>				
-                            <p><strong>Our mission </strong>is to provide the best value and service to our clients. Here we are always ready to help you. We are devoted to the task to construct your dream to fit all your needs and preference. We realize that our success starts and ends with our employees so we try to provide excellent work to our clients with a level of expertise.</p>
-						   <ul class="dez-social-icon dez-border">
-                                <li><a target="_blank" href="https://www.facebook.com/dexignzone/"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a target="_blank" href="https://twitter.com/dexignzones"><i class="fab fa-twitter"></i></a></li>
-                                <li><a target="_blank" href="https://www.linkedin.com/in/dexignzone"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a target="_blank" href="https://www.instagram.com/dexignzone/"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
-                        <div class="widget recent-posts-entry">
-                            <h4 class="m-b15 text-uppercase">Recent Post</h4>
-                            <div class="dez-separator-outer m-b10">
-                                <div class="dez-separator bg-white style-skew"></div>
-                            </div>
-                            <div class="widget-post-bx">
-                                <div class="widget-post clearfix">
-                                    <div class="dez-post-media"> <img src="images/blog/recent-blog/pic1.jpg" alt="" width="200" height="143"> </div>
-                                    <div class="dez-post-info">
-                                        <div class="dez-post-header">
-                                            <h6 class="post-title text-uppercase"><a href="blog-single.html">Title of first blog</a></h6>
-                                        </div>
-                                        <div class="dez-post-meta">
-                                            <ul>
-                                                <li class="post-author">By Admin</li>
-                                                <li class="post-comment"><i class="fa fa-comments"></i> 28</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="widget-post clearfix">
-                                    <div class="dez-post-media"> <img src="images/blog/recent-blog/pic2.jpg" alt="" width="200" height="160"> </div>
-                                    <div class="dez-post-info">
-                                        <div class="dez-post-header">
-                                            <h6 class="post-title text-uppercase"><a href="blog-single.html">Title of first blog</a></h6>
-                                        </div>
-                                        <div class="dez-post-meta">
-                                            <ul>
-                                                <li class="post-author">By Admin</li>
-                                                <li class="post-comment"><i class="fa fa-comments"></i> 28</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="widget-post clearfix">
-                                    <div class="dez-post-media"> <img src="images/blog/recent-blog/pic3.jpg" alt="" width="200" height="160"> </div>
-                                    <div class="dez-post-info">
-                                        <div class="dez-post-header">
-                                            <h6 class="post-title  text-uppercase"><a href="blog-single.html">Title of first blog</a></h6>
-                                        </div>
-                                        <div class="dez-post-meta">
-                                            <ul>
-                                                <li class="post-author">By Admin</li>
-                                                <li class="post-comment"><i class="fa fa-comments"></i> 28</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
-                        <div class="widget widget_services">
-                            <h4 class="m-b15 text-uppercase">Our services</h4>
-                            <div class="dez-separator-outer m-b10">
-                                <div class="dez-separator bg-white style-skew"></div>
-                            </div>
+<footer class="site-footer style-1" style="display: block; height: 443px;">
+    @if($polling = polling_form('kepuasan'))
+<div class="polling container py-5">
+    {{$polling}}
+</div>
+@endif
+    <!-- footer top part -->
+    <div class="footer-top" style="background-image:url(images/background/bg19.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget widget_about">
+                        <h4 class="footer-title">CONTACT</h4>
+                        <div class="widget_getintuch">
                             <ul>
-                                <li><a href="services-2.html">Residential Construction</a></li>
-                                <li><a href="services-2.html">Office Construction</a></li>
-                                <li><a href="services-2.html">Wall Painting</a></li>
-                                <li><a href="services-2.html">Window Construction</a></li>
-                                <li><a href="services-2.html">Commercial Construction</a></li>
-                                <li><a href="services-2.html">Office Construction</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
-                        <div class="widget widget_getintuch">
-                            <h4 class="m-b15 text-uppercase">Contact us</h4>
-                            <div class="dez-separator-outer m-b10">
-                                <div class="dez-separator bg-white style-skew"></div>
-                            </div>
-                            <ul>
-                                <li><i class="fas fa-map-marker-alt"></i><strong>address</strong> demo address #8901 Marmora Road Chi Minh City, Vietnam </li>
-                                <li><i class="fa fa-phone"></i><strong>phone</strong>0800-123456 (24/7 Support Line)</li>
-                                <li><i class="fa fa-fax"></i><strong>FAX</strong>(123) 123-4567</li>
-                                <li><i class="fa fa-envelope"></i><strong>email</strong>info@demo.com</li>
+                                <li>
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    1247/Plot No. 39, 15th Phase,
+                                    Colony, Kkatpally, Hyderabad
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone text-primary"></i>
+                                    +91 987-654-3210
+                                    +91 123-456-7890
+                                </li>
+                                <li>
+                                    <i class="fa fa-fax text-primary"></i>
+                                    info@example.com
+                                    info@example.com
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- footer bottom part -->
-        <div class="footer-bottom footer-line">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 text-left">
-						<span>© Copyright <span class="current-year">2024</span></span> 
-					</div>
-					<div class="col-lg-4 col-md-4 text-center">
-						<span> Design With <i class="fa fa-heart text-primary heart"></i> By DexignZone </span>
-					</div>
-					<div class="col-lg-4 col-md-4 text-right">
-						<a href="about-1.html"> About Us</a> 
-						<a href="faq-1.html"> FAQs</a> 
-						<a href="contact.html"> Contact Us</a> 
-					</div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 ">
+                    <div class="widget widget_services">
+                        <h4 class="footer-title">OUR LINKS</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="blog-grid.html">Blogs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 ">
+                    <div class="widget widget_services">
+                        <h4 class="footer-title">OUR SERVICES</h4>
+                        <ul>
+                            <li><a href="javascript:void(0);">Strategy &amp; Research</a></li>
+                            <li><a href="javascript:void(0);">Web Development</a></li>
+                            <li><a href="javascript:void(0);">Web Solution</a></li>
+                            <li><a href="javascript:void(0);">Digital Marketing</a></li>
+                            <li><a href="javascript:void(0);">App Design</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 ">
+                    <div class="widget widget_services">
+                        <h4 class="footer-title">OTHER LINKS</h4>
+                        <ul>
+                            <li><a href="javascript:void(0);">FAQ</a></li>
+                            <li><a href="javascript:void(0);">Portfolio</a></li>
+                            <li><a href="javascript:void(0);">Privacy Policy</a></li>
+                            <li><a href="javascript:void(0);">Terms &amp; Condition</a></li>
+                            <li><a href="javascript:void(0);">Support</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+    <!-- footer bottom part -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 text-left">
+                    <span class="copyright-text">Copyright © <span class="current-year">2026</span> <a
+                            href="https://dexignzone.com/" class="text-primary" target="_blank">DexignZone</a> All
+                        rights reserved.</span>
+                </div>
+                <div class="col-lg-6 col-md-6 text-right">
+                    <a href="about-1.html">About Us</a>
+                    <a href="about-1.html">Help Desk</a>
+                    <a href="about-1.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
     <!-- Footer END-->
     <!-- scroll top button -->
     <button class="scroltop fa fa-arrow-up style5" ></button>
@@ -144,7 +113,6 @@
 <script src="/template/formal/assets/js/dz.carousel.js"></script><!-- SORTCODE FUCTIONS  -->
 <script src="/template/formal/assets/js/dz.ajax.js"></script><!-- CONTACT JS  -->
 
-<script  src="/template/formal/assets/js/dz.ajax.js"></script>
 <!-- contact-us js -->
 <!-- revolution JS FILES -->
 <script src="/template/formal/assets/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>

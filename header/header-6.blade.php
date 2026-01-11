@@ -6,15 +6,23 @@
 					<div class="dez-topbar-left">
 						<ul>
 							<li class="text-dark"><i class="fas fa-map-marker-alt text-primary"></i> {{get_option('alamat')}} </li>
-							<li class="text-dark"><i class="fas fa-clock  text-primary"></i> {{date('d F Y H:i T')}}</li>
+							<li class="text-dark"><i class="fas fa-clock  text-primary"></i> {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }} - Pukul <span id="jam"></span>
+							{{ realtime_clock('jam') }}
+							</li>
 						</ul>
 					</div>
+					
 					<div class="dez-topbar-right">
 						<ul class="social-bx list-inline pull-right">
-							<li><a target="_blank" href="https://www.facebook.com/dexignzone/"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a target="_blank" href="https://twitter.com/dexignzones"><i class="fab fa-twitter"></i></a></li>
-							<li><a target="_blank" href="https://www.linkedin.com/in/dexignzone"><i class="fab fa-linkedin-in"></i></a></li>
-							<li><a target="_blank" href="https://www.instagram.com/dexignzone/"><i class="fab fa-instagram"></i></a></li>
+							@if($facebook = get_option('facebook'))
+							<li><a target="_blank" href="{{$facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+							@endif
+							@if($twitter = get_option('twitter'))
+							<li><a target="_blank" href="{{$twitter}}"><i class="fab fa-twitter"></i></a></li>
+							@endif
+							@if($instagram = get_option('instagram'))
+							<li><a target="_blank" href="{{$instagram}}"><i class="fab fa-instagram"></i></a></li>
+							@endif
 						</ul>
 					</div>
 				</div>
@@ -24,27 +32,27 @@
 		<div class="bg-white">
 			<div class="container header-contant-block">
 				<div class="row align-items-center">
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<a href="/" class="logo-dark">
 							<img src="{{ get_option('logo_header') }}" width="193" height="89" alt="">
 						</a>
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-6">
 						<ul class="contact-info clearfix">
 							<li>
-								<h6 class="text-primary"><i class="fa fa-phone text-primary"></i> Call Us</h6>
-								<span>+141 0800-123456</span> </li>
+								<h6 class="text-primary"><i class="fa fa-phone text-primary"></i> Hubungi</h6>
+								<span>{{ get_option( 'telepon') }}</span> </li>
 							<li>
-								<h6 class="text-primary"><i class="far fa-envelope text-primary"></i> Send us a Mail</h6>
-								<span>info@dexignzone.com</span> </li>
+								<h6 class="text-primary"><i class="far fa-envelope text-primary"></i> Surel</h6>
+								<span>{{ get_option('email') }}</span> </li>
 							<li>
-								<h6 class="text-primary"><i class="far fa-clock text-primary"></i> Opening Time</h6>
-								<span>Mon -Sat: 7:00 - 17:00</span> </li>
+								<h6 class="text-primary"><i class="far fa-clock text-primary"></i> Jam kerja</h6>
+								<span id="jam_realtime">Senin s/d Jum'at</span> 
+
+
+							</li>
 							<li> 
-								<a class="site-button btn-block radius-sm text-center"> 
-									<h6 class="m-a0 dis-block font-16">Call Toll Free</h6>
-									<p class="m-a0 dis-block text-white">+91 123 456 7890</p>
-								</a> 
+							<img src="https://diskominfotik.bengkaliskab.go.id/green2.png" height="50">
 							</li>
 						</ul>
 					</div>
