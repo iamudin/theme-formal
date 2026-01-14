@@ -57,7 +57,7 @@
                         </p>
 
                         <div class="text-muted small">
-                            <i class="fa fa-file"></i> PDF • 2.3 MB
+                            <i class="fa fa-file"></i> {{ media_exists($row->field?->file) ? media_extension($row->field?->file).' • '.media_size($row->field?->file) : ' -' }}
                             &nbsp; | &nbsp;
                             <i class="fa fa-calendar"></i> {{$row->created_at->translatedformat('d F Y')}}
                         </div>

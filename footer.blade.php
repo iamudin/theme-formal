@@ -11,81 +11,52 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="widget widget_about">
-                        <h4 class="footer-title">CONTACT</h4>
+                        <h4 class="footer-title">KONTAK</h4>
                         <div class="widget_getintuch">
                             <ul>
                                 <li>
                                     <i class="fas fa-map-marker-alt text-primary"></i>
-                                    1247/Plot No. 39, 15th Phase,
-                                    Colony, Kkatpally, Hyderabad
+                                    {{ get_option('alamat') }}
+                                    Bengkalis, Riau, Indonesia
                                 </li>
                                 <li>
                                     <i class="fa fa-phone text-primary"></i>
-                                    +91 987-654-3210
-                                    +91 123-456-7890
+                                    {{ get_option('telepon') }}
                                 </li>
                                 <li>
                                     <i class="fa fa-fax text-primary"></i>
-                                    info@example.com
-                                    info@example.com
+                                   {{get_option('email')}}
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+            @foreach(get_menu('footer') as $menu)
                 <div class="col-lg-3 col-md-6 col-sm-6 ">
                     <div class="widget widget_services">
-                        <h4 class="footer-title">OUR LINKS</h4>
+                        <h4 class="footer-title">{{ $menu->name }}</h4>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="blog-grid.html">Blogs</a></li>
+                            @foreach($menu->sub ?? [] as $item)
+                            <li><a href="{{ $item->url }}">{{ $item->name }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 ">
-                    <div class="widget widget_services">
-                        <h4 class="footer-title">OUR SERVICES</h4>
-                        <ul>
-                            <li><a href="javascript:void(0);">Strategy &amp; Research</a></li>
-                            <li><a href="javascript:void(0);">Web Development</a></li>
-                            <li><a href="javascript:void(0);">Web Solution</a></li>
-                            <li><a href="javascript:void(0);">Digital Marketing</a></li>
-                            <li><a href="javascript:void(0);">App Design</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 ">
-                    <div class="widget widget_services">
-                        <h4 class="footer-title">OTHER LINKS</h4>
-                        <ul>
-                            <li><a href="javascript:void(0);">FAQ</a></li>
-                            <li><a href="javascript:void(0);">Portfolio</a></li>
-                            <li><a href="javascript:void(0);">Privacy Policy</a></li>
-                            <li><a href="javascript:void(0);">Terms &amp; Condition</a></li>
-                            <li><a href="javascript:void(0);">Support</a></li>
-                        </ul>
-                    </div>
-                </div>
+            @endforeach
             </div>
         </div>
     </div>
     <!-- footer bottom part -->
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="border-top:1px dotted #bbb">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 text-left">
                     <span class="copyright-text">Copyright © <span class="current-year">2026</span> <a
-                            href="https://dexignzone.com/" class="text-primary" target="_blank">DexignZone</a> All
-                        rights reserved.</span>
+                            href="/" class="text-primary" target="_blank">{{get_option('nama_organisasi')}}</a> </span>
                 </div>
                 <div class="col-lg-6 col-md-6 text-right">
-                    <a href="about-1.html">About Us</a>
-                    <a href="about-1.html">Help Desk</a>
-                    <a href="about-1.html">Privacy Policy</a>
+                   Dikembangkan oleh TIM IT <a href="https://diskominfotik.bengkaliskab.go.id" class="text-primary" target="_blank">Diskominfotik Kab. Bengkalis</a>
                 </div>
             </div>
         </div>
