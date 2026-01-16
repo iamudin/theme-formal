@@ -34,7 +34,7 @@
 				<div class="row align-items-center">
 					<div class="col-md-6">
 						<a href="/" class="logo-dark">
-							<img src="{{ get_option('logo_header') }}" width="193" height="89" alt="">
+							<img src="{{ get_option('logo_header') }}"  width="300" alt="">
 						</a>
 					</div>
 					<div class="col-md-6">
@@ -67,7 +67,7 @@
                         <!-- website logo -->
                         <div class="logo-header mostion">
 							<a href="/">
-								<img src="{{ get_option('logo_header') }}" width="193" height="89" alt="">
+								<img src="{{ get_option('logo_header') }}" width="300" alt="">
 							</a>
 						</div>
                         <!-- nav toggle button -->
