@@ -35,9 +35,7 @@
                                     <p>{{ $row->short_content }}</p>
                                 </div>
                                 <div class="dez-post-readmore"> <a href="javascript:void(0);" title="READ MORE" rel="bookmark" class="site-button-link">Selengkapnya<i class="fa fa-angle-double-right"></i></a> </div>
-                                <div class="dez-post-tags">
-                                    <div class="post-tags"> <a href="javascript:void(0);">Child </a> <a href="javascript:void(0);">Eduction </a> <a href="javascript:void(0);">Money </a> <a href="javascript:void(0);">Resturent </a> </div>
-                                </div>
+                            
                             </div>
                         </div>
 							@if($key == 1)
