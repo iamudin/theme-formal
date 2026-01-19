@@ -57,7 +57,7 @@
                             </p>
 
                             <div class="text-muted small">
-                                <i class="fa fa-file"></i> {{ media_exists($row->field?->file) ? 'diunduh '.media_hits($row->field?->file).'x • '.media_extension($row->field?->file).' • '.media_size($row->field?->file) : ' -' }}
+                                <i class="fa fa-info"></i> {{ media_exists($row->field?->file) ? 'diunduh '.media_hits($row->field?->file).'x • '.media_extension($row->field?->file).' • '.media_size($row->field?->file) : ' -' }}
                                 &nbsp; | &nbsp;
                                 <i class="fa fa-calendar"></i> {{$row->created_at->translatedformat('d F Y')}}
                             </div>

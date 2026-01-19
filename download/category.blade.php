@@ -13,22 +13,24 @@
                     </div>
                     <div class="row">
                         @if($categories = query()->index_category('download'))
-                            <div class="col-lg-12">
-                                <style>
-                                    .tagcloud a:hover {
-                                        background-color: #000000 !important;
-                                        color: #fff !important;
-                                    }
-                                </style>
-                                <div class="widget bg-white p-a20 widget_tag_cloud">
-                                    <h4 class="tagcloud"> <i class="fa fa-tag"></i> Kategori</h4>
-                                    <div class="tagcloud">
-                                        @foreach($categories as $category)
-                                            <a href="/{{ $category->url }}">{{$category->name}} {{ $category->posts_count }}</a>
-                                        @endforeach
+                            @if($categories->count() > 0)
+                                <div class="col-lg-12">
+                                    <style>
+                                        .tagcloud a:hover {
+                                            background-color: #000000 !important;
+                                            color: #fff !important;
+                                        }
+                                    </style>
+                                    <div class="widget bg-white p-a20 widget_tag_cloud">
+                                        <h4 class="tagcloud"> <i class="fa fa-tag"></i> Kategori</h4>
+                                        <div class="tagcloud">
+                                            @foreach($categories as $category)
+                                                <a href="/{{ $category->url }}">{{$category->name}} {{ $category->posts_count }}</a>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                         @endif
 
                         <!-- ITEM DOWNLOAD -->
@@ -55,8 +57,9 @@
                                                 </p>
 
                                                 <div class="text-muted small">
-                                                    <i class="fa fa-file"></i> {{ media_exists($row->field?->file) ? media_extension($row->field?->file).' • '.media_size($row->field?->file) : ' -' }}
-                            &nbsp; | &nbsp;
+                                                    <i class="fa fa-info"></i>
+                                                    {{ media_exists($row->field?->file) ? 'diunduh ' . media_hits($row->field?->file) . 'x • ' . media_extension($row->field?->file) . ' • ' . media_size($row->field?->file) : ' -' }}
+                                                    &nbsp; | &nbsp;
                                                     <i class="fa fa-calendar"></i>
                                                     {{$row->created_at->translatedformat('d F Y')}}
                                                 </div>
@@ -64,7 +67,8 @@
 
                                             <!-- ACTION -->
                                             <div class="col-auto">
-                                                <a href="#" class="btn btn-sm btn-primary">
+                                                <a href="{{ media_download($row->field?->file) }}"
+                                                    class="btn btn-sm btn-primary">
                                                     <i class="fa fa-download"></i> Download
                                                 </a>
                                             </div>
