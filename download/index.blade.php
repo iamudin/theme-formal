@@ -35,45 +35,45 @@
 
     <!-- ITEM DOWNLOAD -->
     @foreach($index as $row)
-    
-    <div class="col-lg-12 mb-3">
-        <div class="card shadow-sm border-0">
-            <div class="card-body">
-                <div class="row align-items-center">
 
-                    <!-- ICON -->
-                    <div class="col-auto text-center">
-                        <i class="fa fa-file fa-3x text-danger"></i>
-                    </div>
+        <div class="col-lg-12 mb-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <div class="row align-items-center">
 
-                    <!-- INFO -->
-                    <div class="col">
-                        <h6 class="mb-1">
-                            {{$row->title}}
-                        </h6>
-
-                        <p class="mb-1 text-muted small">
-                           {{$row->descripton ?? '-'}}
-                        </p>
-
-                        <div class="text-muted small">
-                            <i class="fa fa-file"></i> {{ media_exists($row->field?->file) ? media_extension($row->field?->file).' • '.media_size($row->field?->file) : ' -' }}
-                            &nbsp; | &nbsp;
-                            <i class="fa fa-calendar"></i> {{$row->created_at->translatedformat('d F Y')}}
+                        <!-- ICON -->
+                        <div class="col-auto text-center">
+                            <i class="fa fa-file fa-3x text-danger"></i>
                         </div>
-                    </div>
 
-                    <!-- ACTION -->
-                    <div class="col-auto">
-                        <a href="{{ media_download($row->field?->file) }}" class="btn btn-sm btn-primary">
-                            <i class="fa fa-download"></i> Download
-                        </a>
-                    </div>
+                        <!-- INFO -->
+                        <div class="col">
+                            <h6 class="mb-1">
+                                {{$row->title}}
+                            </h6>
 
+                            <p class="mb-1 text-muted small">
+                               {{$row->descripton ?? '-'}}
+                            </p>
+
+                            <div class="text-muted small">
+                                <i class="fa fa-file"></i> {{ media_exists($row->field?->file) ? 'diunduh '.media_hits($row->field?->file).'x • '.media_extension($row->field?->file).' • '.media_size($row->field?->file) : ' -' }}
+                                &nbsp; | &nbsp;
+                                <i class="fa fa-calendar"></i> {{$row->created_at->translatedformat('d F Y')}}
+                            </div>
+                        </div>
+
+                        <!-- ACTION -->
+                        <div class="col-auto">
+                            <a href="{{ media_download($row->field?->file) }}" class="btn btn-sm btn-primary">
+                                <i class="fa fa-download"></i> Download
+                            </a>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     @endforeach
 
 </div>
