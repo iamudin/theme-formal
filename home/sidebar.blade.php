@@ -53,7 +53,7 @@
                     {{ $row->title }}
                 </h6>
                 <div class="binder-meta">
-                   {{ $row->created_at->format('d M Y') }}
+                   {{ $row->created_at->translatedFormat('d M Y') }}
                 </div>
             </div>
         </a>
