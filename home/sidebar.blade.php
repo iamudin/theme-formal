@@ -79,7 +79,7 @@
     </h5>
     <!-- Item -->
     @foreach(query()->index_popular('berita',5) as $row)
-    <a href="#" class="popular-item d-flex align-items-center text-decoration-none py-2" style="{{ !$loop->last ? 'border-bottom:1px dashed #ccc' : '' }}">
+    <a href="{{ $row->link }}" class="popular-item d-flex align-items-center text-decoration-none py-2" style="{{ !$loop->last ? 'border-bottom:1px dashed #ccc' : '' }}">
         <div class="popular-thumb flex-shrink-0">
             <img src="{{ $row->thumbnail }}" alt="">
         </div>
@@ -110,14 +110,14 @@
 @foreach(query()->index_limit('download',5) as $row)
     <a href="#" class="download-item d-flex align-items-center text-decoration-none py-2" style="{{ !$loop->last ? 'border-bottom:1px dashed #ccc' : '' }}">
         <div class="download-icon bg-primary">
-            XLS
+            {{ media_exists($row->field?->file) ? media_extension($row->field?->file): 'N/A' }}
         </div>
         <div class="ms-3 flex-grow-1">
             <h6 class="download-title mb-1">
                 {{ $row->title }}
             </h6>
             <div class="download-meta">
-                31 Des 2025 • 980 KB
+                {{ $row->created_at->translatedFormat('d M Y') }} • {{media_exists($row->field?->file) ? media_size($row->field?->file) : '0 KB'}}
             </div>
         </div>
                 </a>

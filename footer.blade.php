@@ -32,7 +32,7 @@
                     </div>
                 </div>
 
-            @foreach(get_menu('footer') as $menu)
+            @foreach(get_menu('footer')->take(3) as $menu)
                 <div class="col-lg-3 col-md-6 col-sm-6 ">
                     <div class="widget widget_services">
                         <h4 class="footer-title">{{ $menu->name }}</h4>
