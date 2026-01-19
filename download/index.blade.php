@@ -65,7 +65,7 @@
 
                     <!-- ACTION -->
                     <div class="col-auto">
-                        <a href="#" class="btn btn-sm btn-primary">
+                        <a href="{{ media_download($row->field?->file) }}" class="btn btn-sm btn-primary">
                             <i class="fa fa-download"></i> Download
                         </a>
                     </div>
