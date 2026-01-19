@@ -1,19 +1,16 @@
+@if($slider = get_banner('slider-home',3))
 <div class="hero-slider">
     <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
 
         <div class="carousel-inner">
-
-            <div class="carousel-item active">
+            @foreach($slider as $key => $slide)
+            <div class="carousel-item {{$loop->first ? 'active' : ''}}">
                 <div class="hero-image">
-                    <img src="https://diskominfotik.bengkaliskab.go.id/asset/banner/5457413371761480798879Slide_Diskominfotik_Baru.jpg" alt="Hero 1">
+                    <img src="{{ $slide->image }}">
                 </div>
             </div>
+            @endforeach
 
-            <div class="carousel-item">
-                <div class="hero-image">
-                    <img src="https://diskominfotik.bengkaliskab.go.id/asset/banner/5457413371761480798879Slide_Diskominfotik_Baru.jpg" alt="Hero 2">
-                </div>
-            </div>
 
         </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
@@ -25,3 +22,4 @@
         </button>
     </div>
 </div>
+@endif
