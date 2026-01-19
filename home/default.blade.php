@@ -10,7 +10,7 @@
                     <!-- Left part start -->
                     <div class="col-lg-8 col-md-12 m-b30">
 					<div class="section-head text-center my-0 mb-4">
-                        <h2 class="text-uppercase text-primary"><i class="fas fa-rss"></i> Berita {{ realtime_timer('09 January 2026 14:42:00') }}</h2>
+                        <h2 class="text-uppercase text-primary"><i class="fas fa-rss"></i> Berita</h2>
                         <div class="dez-separator-outer ">
                             <div class="dez-separator bg-primary style-skew"></div>
                         </div>
