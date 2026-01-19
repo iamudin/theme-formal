@@ -15,4 +15,5 @@ use_module([
     'download'=>['active'=>true,'web'=>['auto_query'=>true,'post_perpage'=>20]] ,
     'pengumuman'=>true,
     'kepegawaian'=>true,
+    'galeri'=>true,
 ]);

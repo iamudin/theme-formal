@@ -71,7 +71,7 @@
                 
                 </div>
 				<div class="row">
-					@foreach(query()->index_limit('berita',6) as $row)
+					@foreach(query()->index_limit('gallery',6) as $row)
 					<div class="col-lg-4 col-md-6 col-sm-6 m-b30 col-6" style="cursor:pointer;">
 						<div class="dez-box">
 							<div class="dez-media dez-img-effect zoom"> <img src="{{ $row->thumbnail }}">
