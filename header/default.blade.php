@@ -28,7 +28,7 @@
                     <!-- website logo -->
                     <div class="logo-header mostion dark">
 						<a href="index.html" class="logo-dark">
-							<img src="{{get_option('logo_header')}}" width="193" height="89" alt="">
+							<img src="{{get_option('logo')}}" width="193" height="89" alt="">
 						</a>
 					</div>
 					<!-- nav toggle button -->

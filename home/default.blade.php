@@ -27,7 +27,7 @@
                                 <div class="dez-post-meta ">
                                     <ul>
                                         <li class="post-date"> <i class="fa fa-calendar"></i><strong>{{ $row->created_at->format('d M') }}</strong> <span> {{ $row->year }}</span> </li>
-                                        <li class="post-author"><i class="fa fa-user"></i>By <a href="javascript:void(0);">{{ $row->user->name }}</a> </li>
+                                        <li class="post-author"><i class="fa fa-user"></i>By <a href="javascript:void(0);">-</a> </li>
                                         <li class="post-comment" style="font-weight: normal"><i class="fa fa-eye"></i> {{ $row->visited }}x </li>
                                     </ul>
                                 </div>
@@ -69,7 +69,7 @@
                 
                 </div>
 				<div class="row">
-					@foreach(query()->index_limit('galeri',6) as $row)
+					@foreach(query()->index_limit('galeri',3) as $row)
 					<div class="col-lg-4 col-md-6 col-sm-6 m-b30 col-6" style="cursor:pointer;">
 						<div class="dez-box">
 							<div class="dez-media dez-img-effect zoom"> <img src="{{ $row->thumbnail }}">
@@ -98,7 +98,7 @@
                 </div>
                 <div class="section-content text-center ">
                     <div class="row">
-						@foreach(query()->index_limit('kepegawaian',4) as $row)
+						@foreach(query()->index_limit('kepegawaian',6) as $row)
 						<div class="col-lg-3 col-md-6 col-sm-6 col-6">
 							<div class="dez-box m-b30">
 								<div class="dez-media"> <a href="javascript:void(0);"> <img width="300" src="{{ $row->thumbnail }}" style="min-height: 390px"> </a>

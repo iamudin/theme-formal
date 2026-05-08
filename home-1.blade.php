@@ -1,1 +1,1 @@
-You Script Here
+<iframe src="https://detik.com" style="width:100%;height:100vh;">
