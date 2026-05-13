@@ -11,6 +11,15 @@
                     <div class="col-lg-8 col-md-12 m-b30">
 					<div class="section-head text-center my-0 mb-4">
                         <h2 class="text-uppercase text-primary"><i class="fas fa-rss"></i> Berita</h2>
+                           <img src="/media/683925319-18357673567226620-4243250772115811005-n.webp" alt="">
+   <img src="/media/683925319-18357673567226620-4243250772115811005-n.webp" alt="">
+   <img src="/media/683925319-18357673567226620-4243250772115811005-n.webp" alt="">
+   <img src="/media/683925319-18357673567226620-4243250772115811005-n.webp" alt="">
+   <img src="/media/683925319-18357673567226620-4243250772115811005-n.webp" alt="">
+   <img src="/media/683925319-18357673567226620-4243250772115811005-n.webp" alt="">
+   <img src="/media/683925319-18357673567226620-4243250772115811005-n.webp" alt="">
+   <img src="/media/683925319-18357673567226620-4243250772115811005-n.webp" alt="">
+   <img src="/media/683925319-18357673567226620-4243250772115811005-n.webp" alt="">
                         <div class="dez-separator-outer ">
                             <div class="dez-separator bg-primary style-skew"></div>
                         </div>

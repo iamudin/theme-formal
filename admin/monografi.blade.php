@@ -105,7 +105,6 @@ $(document).ready(function(){
             success: function () {
                 $('#modalMonografi').modal('hide');
                 tableMonografi.ajax.reload();
-                alert('Data berhasil disimpan!');
             },
             error: function (xhr) {
                 alert('Terjadi kesalahan: ' + (xhr.responseJSON?.message || 'Unknown error'));
@@ -118,7 +117,6 @@ $(document).ready(function(){
             let id = $(this).data('id');
             $.post(baseUrl + '/delete/' + id, {_token: '{{ csrf_token() }}'}, function () {
                 tableMonografi.ajax.reload();
-                alert('Data berhasil dihapus!');
             });
         }
     });

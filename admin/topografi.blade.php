@@ -131,7 +131,6 @@ $(document).ready(function(){
             success: function () {
                 $('#modalTopografi').modal('hide');
                 tableTopografi.ajax.reload();
-                alert('Data berhasil disimpan!');
             },
             error: function (xhr) {
                 alert('Terjadi kesalahan: ' + (xhr.responseJSON?.message || 'Unknown error'));
@@ -160,7 +159,6 @@ $(document).ready(function(){
             let id = $(this).data('id');
             $.post(baseUrl + '/delete/' + id, {_token: '{{ csrf_token() }}'}, function () {
                 tableTopografi.ajax.reload();
-                alert('Data berhasil dihapus!');
             });
         }
     });

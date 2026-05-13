@@ -225,7 +225,6 @@
                 success: function (res) {
                     $('#modalFormUmum').modal('hide');
                     tableUmum.ajax.reload();
-                    alert('Data berhasil disimpan!');
                 },
                 error: function (xhr) {
                     alert('Terjadi kesalahan: ' + (xhr.responseJSON?.message || 'Unknown error'));
@@ -262,7 +261,6 @@
                 let id = $(this).data('id');
                 $.post(baseUrl + '/delete/' + id, {_token: '{{ csrf_token() }}'}, function () {
                     tableUmum.ajax.reload();
-                    alert('Data berhasil dihapus!');
                 });
             }
         });

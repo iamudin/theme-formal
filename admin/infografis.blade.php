@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label>Gambar <span class="text-danger">*</span></label>
-                        <input type="file" class="form-control" name="gambar" accept="image/*">
+                        <input type="file" class="form-control" name="file" accept="image/*">
                         <small class="text-muted">Format: JPG, PNG, WEBP. Maks 5MB</small>
                     </div>
                 </div>
@@ -94,7 +94,6 @@ $(document).ready(function(){
             success: function () {
                 $('#modalInfografis').modal('hide');
                 tableInfografis.ajax.reload();
-                alert('Data berhasil disimpan!');
             },
             error: function (xhr) {
                 alert('Terjadi kesalahan: ' + (xhr.responseJSON?.message || 'Unknown error'));
@@ -107,7 +106,6 @@ $(document).ready(function(){
             let id = $(this).data('id');
             $.post(baseUrl + '/delete/' + id, {_token: '{{ csrf_token() }}'}, function () {
                 tableInfografis.ajax.reload();
-                alert('Data berhasil dihapus!');
             });
         }
     });
