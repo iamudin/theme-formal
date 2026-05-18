@@ -1,4 +1,4 @@
-  <div class="col-lg-4 col-md-12">
+<div class="col-lg-4 col-md-12">
                         <aside  class="side-bar sidebar-sticky">
                             <div class="widget">
                <div class="sidebar-banner-slider">
@@ -134,5 +134,11 @@
                                     </div>
                                    </div>
                                    @endif
+							<div class="widget">
+                                    <div class="rounded">
+								<img src="/stats.png" class="w-100 rounded">
+                                    </div>
+                                    </div>
+								
                         </aside>
                     </div>

@@ -26,8 +26,10 @@
 
                             </ul>
                         </div>
+						@if($detail->media && media_exists($detail->media))
                         <div class="dez-post-media dez-img-effect zoom-slow"> <a href="javascript:void(0);"><img
                                     src="{{$detail->thumbnail}}" alt=""></a> </div>
+						@endif
                         <div class="dez-post-text">
                             {!! $detail->content !!}
                         </div>
